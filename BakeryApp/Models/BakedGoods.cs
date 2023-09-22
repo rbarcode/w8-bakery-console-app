@@ -10,14 +10,6 @@ namespace BakeryApp.Models
     public abstract int Order { get; set; }
     public abstract int TotalPrice { get; set; }
 
-    public void CalcPrice(int order)
-    {
-      Order = order;
-      TotalPrice = (Order * _price);
-      if (Order / _discountOnEveryNthOrder >= 1)
-      {
-        TotalPrice -= ((Order / _discountOnEveryNthOrder) * _price);
-      }
-    }
+    public abstract void CalcPrice(int order);
   }
 }

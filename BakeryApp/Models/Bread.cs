@@ -10,11 +10,16 @@ namespace BakeryApp.Models
     public override int Order { get; set; }
     public override int TotalPrice { get; set; }
 
-    public Bread(int order)
+    public Bread() { }
+
+    public override void CalcPrice(int order)
     {
       Order = order;
+      TotalPrice = (Order * _price);
+      if (Order / _discountOnEveryNthOrder >= 1)
+      {
+        TotalPrice -= ((Order / _discountOnEveryNthOrder) * _price);
+      }
     }
-
-    public void CalcPrice(int order);
   }
 }
