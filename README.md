@@ -14,7 +14,7 @@
 
 ## Description
 
-This console-based application informs the user of the price of bread and pastries in the bakery, as well as quantity-based discounts for the two goods. The user is then prompted to enter the number of loaves of bread and pastries the user would like to purchase. The program returns the total price which reflects any discounts as appropriate.
+This console-based application informs the user of the price of bread and pastries in the bakery, as well as quantity-based discounts for the two goods. The user is then prompted to enter the number of loaves of bread and pastries the user would like to purchase. The program returns the total price which reflects any discounts as appropriate. The program also handles exceptions caused by the input of non-integers.
 
 ## Setup/Installation Requirements
 
