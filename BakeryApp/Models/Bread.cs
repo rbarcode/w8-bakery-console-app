@@ -13,7 +13,7 @@ namespace BakeryApp.Models
     {
       Order = order;
       TotalPrice = (Order * _price);
-      if (Order % _everyThirdOrder == 0)
+      if (Order / _everyThirdOrder >= 1)
       {
         TotalPrice -= ((Order / _everyThirdOrder) * _price);
       }
