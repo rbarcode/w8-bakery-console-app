@@ -1,13 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BakeryApp.Models;
 using System.Reflection.Metadata;
+using System;
 
 namespace BakeryApp.Tests
 {
   [TestClass]
-  public class BreadTests
-
+  public class BreadTests : IDisposable
   {
+    public void Dispose()
+    {
+      Bread.CalcBreadPrice(0);
+    }
+
     [TestMethod]
     public void GetOrder_GetsOrder_Void()
     {
@@ -28,8 +33,6 @@ namespace BakeryApp.Tests
     [TestMethod]
     public void GetTotalPrice_GetsTotalPrice_Void()
     {
-      int newOrder = 0;
-      Bread.CalcBreadPrice(newOrder);
       int expectedTotalPrice = 0;
       Assert.AreEqual(expectedTotalPrice, Bread.TotalPrice);
     }
