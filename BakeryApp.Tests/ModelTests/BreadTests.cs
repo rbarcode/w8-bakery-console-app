@@ -30,7 +30,8 @@ namespace BakeryApp.Tests
     {
       int newOrder = 0;
       Bread.CalcBreadPrice(newOrder);
-      Assert.AreEqual(0, Bread.TotalPrice);
+      int expectedTotalPrice = 0;
+      Assert.AreEqual(expectedTotalPrice, Bread.TotalPrice);
     }
 
     [TestMethod]
@@ -48,6 +49,15 @@ namespace BakeryApp.Tests
       int newOrder = 1;
       Bread.CalcBreadPrice(newOrder);
       int expectedTotalPrice = 5;
+      Assert.AreEqual(expectedTotalPrice, Bread.TotalPrice);
+    }
+
+    [TestMethod]
+    public void CalcBreadPrice_CalculatesTotalPriceOfOrderWithDiscount_Void()
+    {
+      int newOrder = 3;
+      Bread.CalcBreadPrice(newOrder);
+      int expectedTotalPrice = 10;
       Assert.AreEqual(expectedTotalPrice, Bread.TotalPrice);
     }
   }
