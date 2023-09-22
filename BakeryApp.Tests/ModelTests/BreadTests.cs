@@ -20,9 +20,17 @@ namespace BakeryApp.Tests
     public void SetOrder_SetsOrder_Void()
     {
       Bread.CalcBreadPrice(3);
-      int supercedingOrder = 7;
-      Bread.Order = supercedingOrder;
-      Assert.AreEqual(supercedingOrder, Bread.Order);
+      int supersedingOrder = 7;
+      Bread.Order = supersedingOrder;
+      Assert.AreEqual(supersedingOrder, Bread.Order);
+    }
+
+      [TestMethod]
+    public void GetTotalPrice_GetsTotalPrice_Void()
+    {
+      int newOrder = 0;
+      Bread.CalcBreadPrice(newOrder);
+      Assert.AreEqual(0, Bread.TotalPrice);
     }
   }
 }
