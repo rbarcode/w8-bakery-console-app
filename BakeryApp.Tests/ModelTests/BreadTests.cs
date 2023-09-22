@@ -41,5 +41,14 @@ namespace BakeryApp.Tests
       Bread.TotalPrice = supersedingTotalPrice;
       Assert.AreEqual(supersedingTotalPrice, Bread.TotalPrice);
     }
+
+    [TestMethod]
+    public void CalcBreadPrice_CalculatesTotalPriceOfOrderWithoutDiscount_Void()
+    {
+      int newOrder = 1;
+      Bread.CalcBreadPrice(newOrder);
+      int expectedTotalPrice = 5;
+      Assert.AreEqual(expectedTotalPrice, Bread.TotalPrice);
+    }
   }
 }
