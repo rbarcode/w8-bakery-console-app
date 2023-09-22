@@ -8,8 +8,7 @@
 ## Technologies Used
 
 * C#
-* .Net 7.0.400 SDK (incl. MSTest)
-* NuGet
+* .Net 7.0.400 SDK (incl. NuGet and MSTest)
 
 
 
