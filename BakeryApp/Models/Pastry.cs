@@ -2,20 +2,22 @@ using System;
 
 namespace BakeryApp.Models
 {
-  public class Pastry
+  public class Pastry : BakedGoods
   {
-    private static int _price = 2;
-    private static int _everyFourthOrder = 4;
-    public static int Order { get; set; }
-    public static int TotalPrice { get; set; }
+    new private int _price = 2;
+    new private int _discountOnEveryNthOrder = 4;
+    public override int Order { get; set; }
+    public override int TotalPrice { get; set; }
 
-    public static void CalcPastryPrice(int order)
+    public Pastry() {}
+
+    public override void CalcPrice(int order)
     {
       Order = order;
       TotalPrice = (Order * _price);
-      if (Order / _everyFourthOrder >= 1)
+      if (Order / _discountOnEveryNthOrder >= 1)
       {
-        TotalPrice -= ((Order / _everyFourthOrder) * _price);
+        TotalPrice -= ((Order / _discountOnEveryNthOrder) * _price);
       }
     }
   }

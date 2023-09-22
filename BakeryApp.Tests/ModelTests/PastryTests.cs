@@ -6,62 +6,64 @@ using System;
 namespace BakeryApp.Tests
 {
   [TestClass]
-  public class PastryTests : IDisposable
+  public class PastryTests
   {
-    public void Dispose()
-    {
-      Pastry.CalcPastryPrice(0);
-    }
 
     [TestMethod]
     public void GetOrder_GetsOrder_Void()
     {
+      Pastry newPastry = new();
       int newOrder = 6;
-      Pastry.CalcPastryPrice(newOrder);
-      Assert.AreEqual(newOrder, Pastry.Order);
+      newPastry.CalcPrice(newOrder);
+      Assert.AreEqual(newOrder, newPastry.Order);
     }
 
     [TestMethod]
     public void SetOrder_SetsOrder_Void()
     {
-      Pastry.CalcPastryPrice(3);
+      Pastry newPastry = new();
+      newPastry.CalcPrice(3);
       int supersedingOrder = 7;
-      Pastry.Order = supersedingOrder;
-      Assert.AreEqual(supersedingOrder, Pastry.Order);
+      newPastry.Order = supersedingOrder;
+      Assert.AreEqual(supersedingOrder, newPastry.Order);
     }
 
     [TestMethod]
     public void GetTotalPrice_GetsTotalPrice_Void()
     {
+      Pastry newPastry = new();
       int expectedTotalPrice = 0;
-      Assert.AreEqual(expectedTotalPrice, Pastry.TotalPrice);
+      Assert.AreEqual(expectedTotalPrice, newPastry.TotalPrice);
     }
 
     [TestMethod]
     public void SetTotalPrice_SetsTotalPrice_Void()
     {
-      Pastry.CalcPastryPrice(3);
+      Pastry newPastry = new();
+      newPastry.CalcPrice(3);
       int supersedingTotalPrice = 100;
-      Pastry.TotalPrice = supersedingTotalPrice;
-      Assert.AreEqual(supersedingTotalPrice, Pastry.TotalPrice);
+      newPastry.TotalPrice = supersedingTotalPrice;
+      Assert.AreEqual(supersedingTotalPrice, newPastry.TotalPrice);
     }
 
     [TestMethod]
     public void CalcPastryPrice_CalculatesTotalPriceOfOrderWithoutDiscount_Void()
     {
+      Pastry newPastry = new();
       int newOrder = 1;
-      Pastry.CalcPastryPrice(newOrder);
+      newPastry.CalcPrice(newOrder);
       int expectedTotalPrice = 2;
-      Assert.AreEqual(expectedTotalPrice, Pastry.TotalPrice);
+      Assert.AreEqual(expectedTotalPrice, newPastry.TotalPrice);
     }
 
     [TestMethod]
     public void CalcPastryPrice_CalculatesTotalPriceOfOrderWithDiscount_Void()
     {
+      Pastry newPastry = new();
       int newOrder = 4;
-      Pastry.CalcPastryPrice(newOrder);
+      newPastry.CalcPrice(newOrder);
       int expectedTotalPrice = 6;
-      Assert.AreEqual(expectedTotalPrice, Pastry.TotalPrice);
+      Assert.AreEqual(expectedTotalPrice, newPastry.TotalPrice);
     }
   }
 }
