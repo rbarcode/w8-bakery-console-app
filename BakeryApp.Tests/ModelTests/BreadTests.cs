@@ -25,12 +25,21 @@ namespace BakeryApp.Tests
       Assert.AreEqual(supersedingOrder, Bread.Order);
     }
 
-      [TestMethod]
+    [TestMethod]
     public void GetTotalPrice_GetsTotalPrice_Void()
     {
       int newOrder = 0;
       Bread.CalcBreadPrice(newOrder);
       Assert.AreEqual(0, Bread.TotalPrice);
+    }
+
+    [TestMethod]
+    public void SetTotalPrice_SetsTotalPrice_Void()
+    {
+      Bread.CalcBreadPrice(3);
+      int supersedingTotalPrice = 100;
+      Bread.TotalPrice = supersedingTotalPrice;
+      Assert.AreEqual(supersedingTotalPrice, Bread.TotalPrice);
     }
   }
 }
