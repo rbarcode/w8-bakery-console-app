@@ -6,18 +6,14 @@ using System;
 namespace BakeryApp.Tests
 {
   [TestClass]
-  public class BreadTests : IDisposable
+  public class BreadTests
   {
-    public void Dispose()
-    {
-      Bread.CalcBreadPrice(0);
-    }
 
     [TestMethod]
     public void GetOrder_GetsOrder_Void()
     {
-      int newOrder = 6;
-      Bread.CalcBreadPrice(newOrder);
+      Bread newBread = new Bread(6);
+      newBread.CalcPrice();
       Assert.AreEqual(newOrder, Bread.Order);
     }
 

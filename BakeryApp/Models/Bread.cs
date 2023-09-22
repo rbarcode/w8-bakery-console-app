@@ -3,21 +3,18 @@ using System.Runtime.CompilerServices;
 
 namespace BakeryApp.Models
 {
-  public class Bread
+  public class Bread : BakedGoods
   {
-    private static int _price = 5;
-    private static int _everyThirdOrder = 3;
-    public static int Order { get; set; }
-    public static int TotalPrice { get; set; }
+    new private int _price = 5;
+    new private int _discountOnEveryNthOrder = 3;
+    public override int Order { get; set; }
+    public override int TotalPrice { get; set; }
 
-    public static void CalcBreadPrice(int order)
+    public Bread(int order)
     {
       Order = order;
-      TotalPrice = (Order * _price);
-      if (Order / _everyThirdOrder >= 1)
-      {
-        TotalPrice -= ((Order / _everyThirdOrder) * _price);
-      }
     }
+
+    public void CalcPrice(int order);
   }
 }
