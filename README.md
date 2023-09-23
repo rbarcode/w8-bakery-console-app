@@ -22,8 +22,8 @@ This console-based application informs the user of the price of bread and pastri
 2. Click on the green “<> Code” on the far right-hand side of the page's main column.
 3. On the “Local” tab of the mini-window that opens underneath the “<>Code” button, copy the HTTPS link in the gray bar to your clipboard.
 4. In GitBash (or a terminal shell of your choice), navigate to the directory where you wish to download the project and enter the following prompt (replacing the italicized word with the appropriate link): git clone *url-of-the-repository-copied-in-the-previous-step*
-5. Your chosen directory will now contain a folder titled BakeryApp.Solution.
-6. Navigate into the folder called BakeryApp.Tests within BakeryApp.Solution.
+5. Your chosen directory will now contain a folder titled w8-bakery-console-app.
+6. Navigate into the folder called BakeryApp.Tests within w8-bakery-console-app.
 7. If you don't have the .Net Software Development Kit already installed on your computer, do so now. You will also need to download the REPL (read-evaluate-print-loop) tool called dotnet-script. 
 7. To run MSTest from the terminal, enter the following command from within the BakeryApp.Tests directory: dotnet test.
 8. Since this is a console application, you'll interact with it through text commands in your terminal. Navigate back up from BakeryApp.Tests and into the BakeryApp directory. In the command line, enter the following command to compile and execute the console application: dotnet run 
